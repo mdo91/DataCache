@@ -36,8 +36,7 @@ struct MapView: View {
     var body: some View {
         Map(selection: $selectedIdMap) {
             ForEach(quakes) { quake in
-                
-                
+                QuakeMarker(quake: quake, selected: selectedIdMap == quake.id)
             }
         }
         .mapStyle(.standard(elevation: .flat,
